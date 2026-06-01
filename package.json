@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node ./scripts/emit-version.js && next build",
     "start": "next start",
     "lint": "eslint --max-warnings 0",
     "lint:fix": "eslint --fix",
@@ -15,7 +15,8 @@
     "test": "vitest run",
     "test:watch": "vitest --watch",
     "test:coverage": "vitest --coverage",
-    "test:release": "npm run typecheck && npm run lint && npm run format:check && npm run test && npm run build",
+    "emit-version": "node ./scripts/emit-version.js",
+    "test:release": "npm run typecheck && npm run lint && npm run format:check && node ./scripts/run-release-tests.js && npm run build",
     "prepare": "husky || true"
   },
   "lint-staged": {
