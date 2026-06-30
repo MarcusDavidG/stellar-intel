@@ -4,6 +4,7 @@ import { Card } from '@/components/ui/Card';
 import { Hero } from '@/components/landing/Hero';
 import { StatBar } from '@/components/landing/StatBar';
 import { CorridorStrip } from '@/components/landing/CorridorStrip';
+import { Faq } from '@/components/landing/Faq';
 import { KNOWN_ANCHORS } from '@/constants';
 
 export default function HomePage() {
@@ -71,6 +72,9 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+
+      {/* FAQ */}
+      <Faq />
     </div>
   );
 }
